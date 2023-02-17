@@ -12,7 +12,7 @@ export default function Timer(props) {
       }, [])
 
     return (
-        <div>Timer counting up: {time}</div>
+        <div>You have been on this page for: {Math.floor( time/60 )} minutes and {time %60} seconds</div>
     )
 
 }

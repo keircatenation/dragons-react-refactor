@@ -22,7 +22,6 @@ export default function Sidebar(props) {
                 dragonTypes.map(( type, index ) => {
                     let name = type[0];
                     let fills = type[1];
-                    console.log(name, index)
                     return <DragonButton name={name} key={index} dragonIndex={index} addDragon={addDragon} fill1={fills[0]} fill2={fills[1]} fill3={fills[2]} />
                 })
             }
