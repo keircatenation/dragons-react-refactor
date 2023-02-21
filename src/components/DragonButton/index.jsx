@@ -1,11 +1,21 @@
 import DragonIcon from "../DragonIcon";
 export default function DragonButton(props) {
-    const { fill1, fill2, fill3, name, addDragon, dragonIndex } = props;
+    const { dragonType, setDragons } = props;
     // console.log(key, name)
+    const addDragon = () => {
+        let dragon = {
+            name: dragonType[0],
+            fill1: dragonType[1][0],
+            fill2: dragonType[1][1],
+            fill3: dragonType[1][2]
+        };
+        setDragons( prev => [...prev, dragon] )
+    }
+    
     return (
-        <button className='dragon-button' onClick={() => addDragon(dragonIndex)}>
-            <DragonIcon fill1={fill1} fill2={fill2} fill3={fill3} />
-            <p>{name}</p>
+        <button className='dragon-button' onClick={() => addDragon()}>
+            <DragonIcon fill1={dragonType[1][0]} fill2={dragonType[1][1]} fill3={dragonType[1][2]} />
+            <p>{dragonType[0]}</p>
         </button>
     )
 
