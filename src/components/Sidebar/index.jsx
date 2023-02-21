@@ -1,30 +1,26 @@
+import React from "react";
 import { dragonTypes } from "../../assets/data";
 import DragonButton from "../DragonButton";
 
-export default function Sidebar(props) {
-    const { theme, setDragons } = props;
-    function addDragon( dragonTypeIndex ) {
-        // console.log(dragonTypes, dragonTypeIndex);
-        let type = dragonTypes[dragonTypeIndex];
-        let dragon = {
-            name: type[0],
-            fill1: type[1][0],
-            fill2: type[1][1],
-            fill3: type[1][2]
-        };
-        setDragons( prev => [...prev, dragon] )
+class Sidebar extends React.Component {
+    constructor(props) {
+        super(props)
     }
-    return (
-        <aside className={theme}>
-            <h2>Add some dragons!</h2>
-            {
-                dragonTypes.map(( type, index ) => {
-                    let name = type[0];
-                    let fills = type[1];
-                    return <DragonButton name={name} key={index} dragonIndex={index} addDragon={addDragon} fill1={fills[0]} fill2={fills[1]} fill3={fills[2]} />
-                })
-            }
-        </aside>
-    )
-
+    
+    render() {
+        return (
+            <aside className={this.props.theme}>
+                <h2>Add some dragons!</h2>
+                {
+                    dragonTypes.map(( type, index ) => {
+                        let name = type[0];
+                        let fills = type[1];
+                        return <DragonButton name={name} key={index} dragonIndex={index} setDragons={this.setDragons} fill1={fills[0]} fill2={fills[1]} fill3={fills[2]} dragonType={ type } />
+                    })
+                }
+            </aside>
+        )
+    }
 }
+
+export default Sidebar
