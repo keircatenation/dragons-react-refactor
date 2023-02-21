@@ -7,7 +7,7 @@ class Footer extends React.Component {
     }
     render() {
         return(
-            <footer>Copyright {this.date.getFullYear()}</footer>
+            <footer className={this.props.theme}>Copyright {this.date.getFullYear()}</footer>
         )
     }
 }

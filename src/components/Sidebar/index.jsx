@@ -13,9 +13,7 @@ class Sidebar extends React.Component {
                 <h2>Add some dragons!</h2>
                 {
                     dragonTypes.map(( type, index ) => {
-                        let name = type[0];
-                        let fills = type[1];
-                        return <DragonButton name={name} key={index} dragonIndex={index} setDragons={this.setDragons} fill1={fills[0]} fill2={fills[1]} fill3={fills[2]} dragonType={ type } />
+                        return <DragonButton key={index} setDragons={this.props.setDragons} dragonType={ type } />
                     })
                 }
             </aside>

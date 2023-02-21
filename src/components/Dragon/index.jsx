@@ -4,10 +4,12 @@ class Dragon extends React.Component {
     constructor(props) {
         super(props)
         this.state = { clicks: 0 }
-        this.addClick.bind(this);
+        this.addClick = this.addClick.bind(this);
     }
-    addClick = function() {
-        this.setState( prev => { clicks: prev.clicks + 1 } )
+    addClick() {
+        this.setState( prev => { 
+            return ( { clicks: prev.clicks + 1 } )
+        } )
     }
 
     render() {
