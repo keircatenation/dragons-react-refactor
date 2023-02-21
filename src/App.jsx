@@ -11,7 +11,6 @@ function App() {
   const [dragons, setDragons] = useState([]);
 
   function handleThemeChange(val) {
-    console.log(val, 'theme changes');
     setTheme(val);
   }
   return (
@@ -22,7 +21,6 @@ function App() {
         <select name='theme' id='theme-select' onChange={event => handleThemeChange(event.target.value)}>
           {
             themes.map((themeSelection, index) => {
-              console.log(themeSelection)
               return (
                 <option value={themeSelection} key={themeSelection + index}>{themeSelection}</option>
               )
