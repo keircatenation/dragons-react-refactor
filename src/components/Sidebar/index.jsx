@@ -1,5 +1,4 @@
 import { dragonTypes } from "../../assets/data";
-import Dragon from "../Dragon";
 import DragonButton from "../DragonButton";
 
 export default function Sidebar(props) {
