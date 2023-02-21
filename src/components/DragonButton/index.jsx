@@ -1,12 +1,18 @@
+import React from "react";
 import DragonIcon from "../DragonIcon";
-export default function DragonButton(props) {
-    const { fill1, fill2, fill3, key, name, addDragon, dragonIndex } = props;
-    // console.log(key, name)
-    return (
-        <button key={key} className='dragon-button' onClick={() => addDragon(dragonIndex)}>
-            <DragonIcon fill1={fill1} fill2={fill2} fill3={fill3} />
-            <p>{name}</p>
-        </button>
-    )
+class DragonButton extends React.Component {
+    constructor( props) {
+        super(props)
+    }
 
+    render() {
+        return (
+            <button key={this.props.key} className='dragon-button' onClick={() => this.props.addDragon(this.props.dragonIndex)}>
+                <DragonIcon fill1={this.props.fill1} fill2={this.props.fill2} fill3={this.props.fill3} />
+                <p>{this.props.name}</p>
+            </button>
+        )
+    }
 }
+
+export default DragonButton;

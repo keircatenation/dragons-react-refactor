@@ -1,9 +1,15 @@
-export default function Footer(props) {
-    // just returning the copyright text
-    const date = new Date();
-    const {theme} = props;
-    return (
-        <footer className={theme}>Copyright {date.getFullYear()}</footer>
-    )
+import React from "react";
 
+class Footer extends React.Component {
+    constructor(props) {
+        super(props)
+        this.date = new Date()
+    }
+    render() {
+        return(
+            <footer>Copyright {this.date.getFullYear()}</footer>
+        )
+    }
 }
+
+export default Footer;
